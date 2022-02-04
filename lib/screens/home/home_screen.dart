@@ -9,9 +9,24 @@ class HomeScreen extends StatelessWidget {
     List<Widget> _widgets = [
       Expanded(
         child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+          height: isDesktop(context, 800) ? double.infinity : null,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            border: Border.all(
+              color: Theme.of(context).primaryColor,
+              width: 2,
+            ),
+          ),
+          child: const Padding(
+            padding: EdgeInsets.all(5.0),
+            child: TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: 'Enter text to translate',
+              ),
+            ),
           ),
         ),
       ),
@@ -21,15 +36,25 @@ class HomeScreen extends StatelessWidget {
       ),
       Expanded(
         child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Theme.of(context).primaryColor,
+              width: 2,
+            ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10),
+            ),
           ),
         ),
       )
     ];
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.translate),
+        tooltip: 'Translate',
+      ),
       appBar: AppBar(
         title: const Text('Translator'),
         actions: [
