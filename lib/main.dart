@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:translator/providers/theme_providers.dart';
-import 'package:translator/screens/home/home_screen.dart';
-import 'package:translator/screens/theme/theme_screen.dart';
+import 'package:translex/providers/theme_providers.dart';
+import 'package:translex/screens/home/home_screen.dart';
+import 'package:translex/screens/theme/theme_screen.dart';
 
 void main() {
   runApp(
@@ -22,7 +22,7 @@ class MyApp extends ConsumerWidget {
         '/': (context) => const HomeScreen(),
         '/themes': (context) => const ThemeScreen(),
       },
-      title: 'Translator',
+      title: 'Translex',
       theme: ref.watch(lightThemeProvider),
       darkTheme: ref.watch(darkThemeProvider),
       initialRoute: '/',
