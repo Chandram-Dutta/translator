@@ -87,7 +87,7 @@ class HomeScreen extends ConsumerWidget {
                   applicationIcon: SizedBox(
                       height: 50,
                       width: 50,
-                      child: Image.asset("assets/logo512.png")));
+                      child: Image.asset("assets/logo512.png"),),);
             },
           ),
           Padding(
